@@ -35,7 +35,7 @@ from sklearn.pipeline import make_pipeline
 from pathlib import Path
 
 import joblib
-
+import pickle
 
 #--------------Cleaning begins -------------------#
 BASE_DIR = Path(__file__).resolve(strict=True).parent
@@ -105,7 +105,8 @@ def train():
 
     # fitting our model.
     pipe.fit(X_train,y_train)
-    joblib.dump(pipe, Path(BASE_DIR).joinpath(f"mod.joblib"))
+
+    #pickle.dump(pipe, open('pickle_model', 'wb'))
     print("hello!")
 
 train()

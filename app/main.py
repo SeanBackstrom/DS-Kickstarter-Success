@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 from app.api import predict, viz
+from model import train
 
 app = FastAPI(
     title='Kickstarter Success',
